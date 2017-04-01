@@ -1,0 +1,12 @@
+---
+version: '3'
+services:
+  neo:
+    image: neo4j
+
+  api:
+    build: .
+    depends_on:
+      - neo
+    links:
+      - neo
